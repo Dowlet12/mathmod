@@ -1,0 +1,13 @@
+model Oscil
+parameter Real x0 = 0;
+parameter Real y0 = 1;
+parameter Real omega = 1;
+parameter Real gamma = 4;
+Real P;
+Real x(start=x0);
+Real y(start=y0);
+equation
+P = sin(14*time);
+der(x) = y;
+der(y) = P-gamma*der(x)-omega*x;
+end Oscil;
