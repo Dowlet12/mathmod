@@ -1,0 +1,8 @@
+model Advert
+parameter Real N = 500;
+parameter Real N0 = 5;
+Real n(start=N0);
+equation
+// 1 случай
+der(n) = (0.55 + 0.0001*n)*(N - n);
+end Advert;
